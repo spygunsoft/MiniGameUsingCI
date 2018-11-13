@@ -1,0 +1,45 @@
+html,body {
+	height:100%;
+	}
+	
+.spacer {
+	height:65px;
+}
+
+.row > div{
+	border:solid 1px #666;
+	border-top:none;
+	border-left:none;
+	height:25vh;
+}
+
+.row > div:first-child {
+	border-left:solid 1px #666;
+}
+
+.row:nth-child(1) > div{
+	border-top:solid 1px #666;
+}
+
+.row:nth-child(odd) > div:nth-child(even){
+	background-color:#CCCCCC;
+}
+
+.row:nth-child(even) > div:nth-child(odd){
+	background-color:#CCCCCC;
+}
+
+.navbar-fixed-bottom button{
+	margin-top:15px;
+}
+
+
+.glyphicon-custom {	
+	margin:0px 5px 0px 5px;
+}
+
+.navbar-custom > span{
+	position:relative;
+}
+
+

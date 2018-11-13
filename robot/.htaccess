@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+    
+    #The base folder (where index.php is found)
+    RewriteBase /robot/
+
+    #Removes access to the system folder by users.
+    
+    RewriteCond %{REQUEST_URI} ^system.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+    
+    #When application folder isn't in the system folder
+    #Prevents user access to the application folder
+    
+    RewriteCond %{REQUEST_URI} ^application.*
+    RewriteRule ^(.*)$ /index.php/$1 [L]
+
+    #Checks to see if attempting to access a valid file
+    #if this isn't true it sends the request to index.php
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+    
+</IfModule>  
